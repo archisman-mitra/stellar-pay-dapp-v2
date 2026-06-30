@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Copy, Check, LogOut, ExternalLink } from "lucide-react";
+import { Copy, Check, LogOut, ExternalLink, ShieldCheck } from "lucide-react";
 
 const WalletCard = ({ address, onDisconnect }) => {
   const [copied, setCopied] = useState(false);
@@ -17,42 +17,48 @@ const WalletCard = ({ address, onDisconnect }) => {
 
   const shortenAddress = (addr) => {
     if (!addr) return "";
-    return addr.slice(0, 6) + "..." + addr.slice(-6);
+    return addr.slice(0, 8) + "..." + addr.slice(-8);
   };
 
   return (
-    <div className="bg-slate-900 rounded-2xl shadow-lg border border-slate-800 p-5 sm:p-6 transition-all duration-200 hover:translate-y-[-2px]">
+    <div className="glass-panel glass-panel-hover rounded-3xl p-6 transition-all duration-300 relative overflow-hidden">
+      {/* Background card accent glow */}
+      <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
+
       {/* Top Row: Connected + Disconnect */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-          <span className="text-sm font-medium text-green-400">Connected</span>
+          <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)] animate-pulse" />
+          <span className="text-xs font-bold text-emerald-400 tracking-wide uppercase">Connected</span>
         </div>
         <button
           onClick={onDisconnect}
-          className="flex items-center gap-1.5 text-sm font-medium text-red-400 hover:text-red-300 transition-colors"
+          className="flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors"
         >
-          <LogOut size={14} />
+          <LogOut size={13} />
           Disconnect
         </button>
       </div>
 
       {/* Address Box */}
-      <div className="bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 mb-4">
-        <div className="text-[11px] font-medium text-slate-500 uppercase tracking-wide mb-1">Your Address</div>
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-sm font-mono text-slate-200 truncate">
+      <div className="bg-slate-950/30 border border-slate-800/80 rounded-2xl px-4 py-3.5 mb-5 relative group/addr">
+        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+          <ShieldCheck size={11} className="text-emerald-500" />
+          <span>Stellar Public Key</span>
+        </div>
+        <div className="flex items-center justify-between gap-3">
+          <span className="text-xs font-mono text-slate-300 truncate" title={address}>
             {shortenAddress(address)}
           </span>
           <button
             onClick={copyAddress}
-            className="p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 active:scale-95 transition-all duration-200 shrink-0 relative"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-900 border border-transparent hover:border-slate-800/80 active:scale-95 transition-all duration-200 shrink-0 relative"
             title="Copy Address"
           >
-            {copied ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+            {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
             {copied && (
-              <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-green-500/20 border border-green-500/30 text-[10px] rounded text-green-400 whitespace-nowrap font-medium">
-                Copied! ✅
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-emerald-500/20 border border-emerald-500/30 text-[9px] rounded text-emerald-400 whitespace-nowrap font-semibold">
+                Copied!
               </span>
             )}
           </button>
@@ -64,12 +70,14 @@ const WalletCard = ({ address, onDisconnect }) => {
         href={`https://stellar.expert/explorer/testnet/account/${address}`}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center gap-1.5 text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-all group/link"
       >
-        View on Stellar Expert <ExternalLink size={14} />
+        <span>View on Stellar Expert</span>
+        <ExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
       </a>
     </div>
   );
 };
 
 export default WalletCard;
+

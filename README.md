@@ -19,7 +19,7 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 ### 🏠 Home Page
 
 <div align="center">
-  <img src="./screenshots/Home1.jpg" alt="Home Page" width="48%" />
+  <img src="./screenshots/home1.jpg" alt="Home Page" width="48%" />
   &nbsp;
   <img src="./screenshots/home2.jpg" alt="Home Page Alt" width="48%" />
 </div>
@@ -29,16 +29,18 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 ### 📊 Dashboard
 
 <div align="center">
-  <img src="./screenshots/Dashboard.jpg" alt="Dashboard" width="90%" />
+  <img src="./screenshots/dashboard1.jpg" alt="Dashboard" width="48%" />
+  &nbsp;
+  <img src="./screenshots/dashboard2.jpg" alt="Dashboard" width="48%" />
 </div>
 
 ---
 
 ## 📸 Screenshots
 
-| Wallet Connected                                              | Balance                                                        | Send Payment                                                | Success                                                        |
-| ------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------------- |
-| ![Wallet](./screenshots/Screenshot%202026-04-25%20220805.jpg) | ![Balance](./screenshots/Screenshot%202026-04-25%20220922.jpg) | ![Send](./screenshots/Screenshot%202026-04-25%20221229.jpg) | ![Success](./screenshots/Screenshot%202026-04-25%20221511.jpg) |
+| Wallet Connected                               | Balance                                      | Send Payment                            | Success                                                        |
+| ---------------------------------------------- | -------------------------------------------- | --------------------------------------- | -------------------------------------------------------------- |
+| ![Wallet](./screenshots/Swallet-connected.jpg) | ![Balance](./screenshots/wallet-balance.jpg) | ![Send](./screenshots/send-payment.jpg) | ![Success](./screenshots/Screenshot%202026-04-25%20221511.jpg) |
 
 > **Transaction on Stellar Explorer (proof of deployment)**  
 > ![Explorer](./screenshots/Screenshot%202026-04-25%20221628.jpg)
