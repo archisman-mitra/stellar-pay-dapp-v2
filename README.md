@@ -38,9 +38,9 @@ Connect your Freighter wallet, check your XLM balance, and send payments — all
 
 ## 📸 Screenshots
 
-| Wallet Connected                               | Balance                                      | Send Payment                            | Success                                                        |
-| ---------------------------------------------- | -------------------------------------------- | --------------------------------------- | -------------------------------------------------------------- |
-| ![Wallet](./screenshots/Swallet-connected.jpg) | ![Balance](./screenshots/wallet-balance.jpg) | ![Send](./screenshots/send-payment.jpg) | ![Success](./screenshots/Screenshot%202026-04-25%20221511.jpg) |
+| Wallet Connected                              | Balance                                      | Send Payment                            | Success                               |
+| --------------------------------------------- | -------------------------------------------- | --------------------------------------- | ------------------------------------- |
+| ![Wallet](./screenshots/wallet-connected.jpg) | ![Balance](./screenshots/wallet-balance.jpg) | ![Send](./screenshots/send-payment.jpg) | ![Success](./screenshots/success.jpg) |
 
 > **Transaction on Stellar Explorer (proof of deployment)**  
 > ![Explorer](./screenshots/Screenshot%202026-04-25%20221628.jpg)
